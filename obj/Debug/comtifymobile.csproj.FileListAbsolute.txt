@@ -1,0 +1,6 @@
+c:\users\abhishek\documents\visual studio 2013\Projects\comtifymobile\comtifymobile\bin\comtifymobile.dll.config
+c:\users\abhishek\documents\visual studio 2013\Projects\comtifymobile\comtifymobile\bin\comtifymobile.dll
+c:\users\abhishek\documents\visual studio 2013\Projects\comtifymobile\comtifymobile\bin\comtifymobile.pdb
+c:\users\abhishek\documents\visual studio 2013\Projects\comtifymobile\comtifymobile\obj\Debug\comtifymobile.csprojResolveAssemblyReference.cache
+c:\users\abhishek\documents\visual studio 2013\Projects\comtifymobile\comtifymobile\obj\Debug\comtifymobile.dll
+c:\users\abhishek\documents\visual studio 2013\Projects\comtifymobile\comtifymobile\obj\Debug\comtifymobile.pdb

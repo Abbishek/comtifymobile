@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <script src="js/bootstrapscripts/jquery-1.9.1.min.js"></script>
+    <!--<script src="js/bootstrapscripts/jquery-1.9.1.intellisense.js"></script>-->
+    <script src="js/bootstrapscripts/bootstrap.min.js"></script>
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <!--<link href="lib/ionic/css/ionic.css" rel="stylesheet">-->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/bootstrapcontent/bootstrap.css" rel="stylesheet" />
+    <!--IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above-->
+    <!--<link href="lib/ionic/css/ionic.app.css" rel="stylesheet">-->
+    <!--<link href="lib/ionic/css/ionic.css" rel="stylesheet" />-->
+    <link href="lib/font-awesome-4.1.0/css/font-awesome.css" rel="stylesheet" />
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <!-- cordova script (this will be a 404 during development) -->
+    <!--<script src="cordova.js"></script>-->
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+    <script src="js/index.js"></script>
+</head>
+<body ng-app="starter">
+    <div>
+        <header class="container-fluid">
+            <div class="col-xs-2 fa fa-plus-circle fa-2x">
+            </div>
+            <div class="col-xs-6">
+                <select class="selectpicker" data-style="btn-info">
+                    <option value="1">#inbox</option>
+                    <option value="2">#to</option>
+                    <option value="3">#cc</option>
+                    <option value="4">attachments</option>
+                </select>
+            </div>
+            <div class="col-xs-2 fa fa-search fa-2x">
+            </div>
+            <div class="col-xs-2 users">
+                <img src="img/users/19.jpg" />
+            </div>
+        </header>
+        <div class="container thread">
+            <div class="col-xs-2 users">
+                <img src="img/users/19.jpg" />
+            </div>
+            <div class="col-xs-8">
+                <div class="subject">New Color theme</div>
+                <div class="tagsdiv">
+                    <div class="tags"><span>#to</span><span class="tagclose">x</span></div>
+                    <div class="tags"><span>#inbox</span><span class="tagclose">x</span></div>
+                </div>
+            </div>
+            <div class="col-xs-2 users">
+                <img src="img/users/19.jpg" />
+            </div>
+        </div>
+        <div class="container thread">
+            <div class="col-xs-2 users">
+                <img src="img/users/19.jpg" />
+            </div>
+            <div class="col-xs-8">
+                <div class="subject">Another Ahmedabad based company</div>
+                <div class="tagsdiv">
+                    <div class="tags"><span>#to</span><span class="tagclose">x</span></div>
+                    <div class="tags"><span>#inbox</span><span class="tagclose">x</span></div>
+                </div>
+            </div>
+            <div class="col-xs-2 users">
+                <img src="img/users/19.jpg" />
+            </div>
+        </div>
+        <!--<footer class="container-fluid">
+            <div class="col-xs-10">
+            </div>
+            
+        </footer>-->
+    </div>
+    <ul id="plus-drop" class="adddropdown" data-dropdown-content="">
+        <li><label><strong>Add:</strong></label></li>
+        <li data-hover="Click to compose a new thread"><a href="#" id="plus-create-thread"><i class="fi-at-sign shadow"></i>&nbsp;&nbsp;Thread</a></li>
+        <li data-hover="Click to create a new task"><a href="#" id="plus-create-task"><i class="fi-clipboard-pencil shadow"></i>&nbsp;&nbsp;Task</a></li>
+        <li data-hover="Click to post an Update / new knowledge share"><a href="#" id="plus-create-update"><i class="fi-share shadow"></i>&nbsp;&nbsp;Update</a></li>
+        <hr>
+        <li data-hover="Click to create a new Private Tag"><a href="#" id="plus-private-tag"><i class="fi-lock shadow"></i>&nbsp;&nbsp;Private Tag</a></li>
+        <li data-hover="Click to create a new Public Tag"><a href="#" id="plus-public-tag"><span class="shadow">#</span>&nbsp;&nbsp;Public Tag</a></li>
+        <hr>
+    </ul>
+</body>
+</html>
