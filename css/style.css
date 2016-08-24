@@ -4,14 +4,10 @@ body {
 }
 
 header, footer {
-    background-color:#333;
+    background-color:#579cBF;
     color:#ddd;
-    padding:8px;
+    padding:4px !important;
     text-align:center;
-}
-
-header {
-top:0;
 }
 
 footer {
@@ -28,11 +24,15 @@ footer {
     text-align:center;
 }
 
+.users {
+    display:inline;
+}
+
 .thread{
-    padding:5px;
+    padding:4px;
     border:solid 1px #e9eaed;
-    margin:4px;
     cursor:pointer;
+    border-bottom-color:transparent;
 }
 
  /*position: absolute;
@@ -41,14 +41,26 @@ footer {
   left: 0;
   padding: 1rem;*/
 
+.search {
+    width: 100%;
+    height: 30px;
+    display:none;
+    color:#808080;
+}
+
 .selectpicker {
- display:inline-block;
- width:100%;
- height:30px;
+    display: inline-block;
+    width: 100%;
+    height: 30px;
+    color:#808080;
 }
 
 .selectpicker option{
     height:30px;
+}
+
+.subject {
+    border:solid 1px transparent;
 }
 
 .subject:hover {
@@ -83,6 +95,7 @@ footer {
     right: 0;
     top: 0;
     vertical-align: top;
+    z-index:999999999;
 }
 
 .tagclose:hover {
@@ -97,6 +110,7 @@ footer {
     background-color: #fff;
     /* display: inline-block; */
     text-decoration: none;
+    border:solid 1px transparent;
 }
 
     .tagsdiv:hover {
@@ -104,17 +118,42 @@ footer {
     }
 
 .adddropdown {
-    position: absolute;
-    top: -9999px;
     list-style: none;
-    margin-left: 0;
-    width: 100%;
+    margin-left: -20px;
     max-height: none;
     height: auto;
-    background: white;
-    border: solid 1px #cccccc;
-    font-size: 16px;
+    background: transparent;
+    font-size: 20px;
     z-index: 99;
     margin-top: 2px;
-    max-width: 200px;
+    max-width: 100px;
+    height:50px;
+    display:none;
 }
+
+.fa-plus-circle:hover, .fa-times:hover, .fa-search:hover, .fa-list-ul:hover {
+    cursor : pointer;
+}
+
+.adddropdown li {
+    border: solid 1px #cccccc;
+    text-align:center;
+    padding:5px;
+    margin:5px;
+	width: 40px;
+	height: 40px;
+	z-index: 999;
+	right: 20px;
+	bottom: 20px;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	border-radius: 30px;
+    cursor:pointer;
+    background-color:#b8ddf8;
+}
+
+  .ui-tooltip {
+    top:-10px;
+    padding: 5px 1px;
+  }
+

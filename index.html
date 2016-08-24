@@ -6,37 +6,40 @@
     <title></title>
 
     <script src="js/bootstrapscripts/jquery-1.9.1.min.js"></script>
-    <!--<script src="js/bootstrapscripts/jquery-1.9.1.intellisense.js"></script>-->
     <script src="js/bootstrapscripts/bootstrap.min.js"></script>
-
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <!--<link href="lib/ionic/css/ionic.css" rel="stylesheet">-->
-    <link href="css/style.css" rel="stylesheet">
     <link href="css/bootstrapcontent/bootstrap.css" rel="stylesheet" />
+    <!--<script src="js/bootstrapscripts/jquery-ui.js"></script>-->
+    <!--<script src="js/bootstrapscripts/jquery-1.9.1.intellisense.js"></script>-->
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
     <!--IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above-->
     <!--<link href="lib/ionic/css/ionic.app.css" rel="stylesheet">-->
-    <!--<link href="lib/ionic/css/ionic.css" rel="stylesheet" />-->
     <link href="lib/font-awesome-4.1.0/css/font-awesome.css" rel="stylesheet" />
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
     <!-- cordova script (this will be a 404 during development) -->
-    <!--<script src="cordova.js"></script>-->
+    <script src="cordova.js"></script>
     <!-- your app's js -->
     <script src="js/app.js"></script>
     <script src="js/index.js"></script>
+    <script src="js/common.js"></script>
 </head>
 <body ng-app="starter">
     <div>
         <header class="container-fluid">
             <div class="col-xs-2 fa fa-plus-circle fa-2x">
+                
             </div>
-            <div class="col-xs-6">
-                <select class="selectpicker" data-style="btn-info">
+            <div class="col-xs-6" style="display:inline-block;">
+                <select class="selectpicker" id="selectpicker" data-style="btn-info">
                     <option value="1">#inbox</option>
                     <option value="2">#to</option>
                     <option value="3">#cc</option>
                     <option value="4">attachments</option>
                 </select>
+                <input id="searchbox" placeholder="search" class="search" />
             </div>
             <div class="col-xs-2 fa fa-search fa-2x">
             </div>
@@ -44,7 +47,7 @@
                 <img src="img/users/19.jpg" />
             </div>
         </header>
-        <div class="container thread">
+        <div class="container thread" onclick="Description(this);">
             <div class="col-xs-2 users">
                 <img src="img/users/19.jpg" />
             </div>
@@ -59,7 +62,7 @@
                 <img src="img/users/19.jpg" />
             </div>
         </div>
-        <div class="container thread">
+        <div class="container thread" onclick="Description(this);">
             <div class="col-xs-2 users">
                 <img src="img/users/19.jpg" />
             </div>
@@ -74,21 +77,80 @@
                 <img src="img/users/19.jpg" />
             </div>
         </div>
+        <ul id="plus-drop" class="adddropdown" data-dropdown-content="Click to Add" style="position:absolute;top:5%;left:8%">
+            <li data-toggle="tooltip" title="Thread" data-placement="right"><a href="#" id="plus-create-thread"><i class="fa fa-envelope"></i></a></li>
+            <li data-placement="right" data-toggle="tooltip" title="Task"><a href="#" id="plus-create-task"><i class="fa fa-tasks shadow"></i></a></li>
+            <li data-placement="right" data-toggle="tooltip" title="Update"><a href="#" id="plus-create-update"><i class="fa fa-share shadow"></i></a></li>
+            <li data-toggle="tooltip" title="Private Tag" data-placement="right"><a href="#" id="plus-private-tag"><i class="fa fa-lock shadow"></i></a></li>
+            <li data-toggle="tooltip" title="Public Tag" data-placement="right"><a href="#" id="plus-public-tag"><span class="fa shadow" style="font-weight:400">#</span></a></li>
+        </ul>
         <!--<footer class="container-fluid">
             <div class="col-xs-10">
             </div>
             
         </footer>-->
     </div>
-    <ul id="plus-drop" class="adddropdown" data-dropdown-content="">
-        <li><label><strong>Add:</strong></label></li>
-        <li data-hover="Click to compose a new thread"><a href="#" id="plus-create-thread"><i class="fi-at-sign shadow"></i>&nbsp;&nbsp;Thread</a></li>
-        <li data-hover="Click to create a new task"><a href="#" id="plus-create-task"><i class="fi-clipboard-pencil shadow"></i>&nbsp;&nbsp;Task</a></li>
-        <li data-hover="Click to post an Update / new knowledge share"><a href="#" id="plus-create-update"><i class="fi-share shadow"></i>&nbsp;&nbsp;Update</a></li>
-        <hr>
-        <li data-hover="Click to create a new Private Tag"><a href="#" id="plus-private-tag"><i class="fi-lock shadow"></i>&nbsp;&nbsp;Private Tag</a></li>
-        <li data-hover="Click to create a new Public Tag"><a href="#" id="plus-public-tag"><span class="shadow">#</span>&nbsp;&nbsp;Public Tag</a></li>
-        <hr>
-    </ul>
+   
+    <script>
+        $(function () {
+            //$('.fa-plus-circle').prepend('<ul id="plus-drop" class="adddropdown" data-dropdown-content="Click to Add" style="height:auto;width:auto;">' +
+            //        '<li data-toggle="tooltip" title="New Thread" data-placement="right"><a href="#" id="plus-create-thread"><i class="fa fa-envelope"></i></a></li>'+
+            //        '<li data-placement="right" data-toggle="tooltip" title="New Task"><a href="#" id="plus-create-task"><i class="fa fa-tasks shadow"></i></a></li>'+
+            //        '<li data-placement="right" data-toggle="tooltip" title="New Update"><a href="#" id="plus-create-update"><i class="fa fa-share shadow"></i></a></li>'+
+            //        '<li data-toggle="tooltip" title="New Private Tag" data-placement="right"><a href="#" id="plus-private-tag"><i class="fa fa-lock shadow"></i></a></li>'+
+            //        '<li data-toggle="tooltip" title="New Public Tag" data-placement="right"><a href="#" id="plus-public-tag"><span class="fa shadow">#</span></a></li>'+
+            //        '</ul>');
+
+            //$.ajax({
+            //    type: 'get',
+            //    url: '/json_data.json',
+            //    dataType: "json",
+            //    data: person,
+            //    success: function (data) {
+            //        $.each(data.person, function () {
+            //            var img = $('<img>'); //Equivalent: $(document.createElement('img'))
+            //            img.attr('src', this['img']);
+            //            img.appendTo('.users');
+            //            $(".subject").text(this['theme']);
+            //            var span = $('<span></span>');
+            //            span.text(this['tag']);
+            //            span.appendTo('.tags');
+            //        });
+            //    },
+            //    error: function () { alert("data not found"); }
+
+            //});
+
+            //var person = {
+            //    "person": [
+            //       { "img": "img/users/19.jpg", "theme": "New Color theme", "tag": "#to" }
+            //    ]
+            //};
+        });
+            
+
+        //$(document).tooltip({
+        //    items: ".fa-plus-circle",
+        //   // tooltipClass: "arrow",
+        //    position: {
+        //        my: "bottom",
+        //        at: "bottom"
+        //    },
+        //    content: function () {
+        //        var $this = $(this),
+        //            random, html = "";
+
+        //        var frame = "<div class=''>";
+        //        var image = '<ul id="plus-drop" class="adddropdown" data-dropdown-content="Click to Add" style="height:auto;width:auto;">' +
+        //    '<li data-toggle="tooltip" title="New Thread" data-placement="right"><a href="#" id="plus-create-thread"><i class="fa fa-envelope"></i></a></li>' +
+        //    '<li data-placement="right" data-toggle="tooltip" title="New Task"><a href="#" id="plus-create-task"><i class="fa fa-tasks shadow"></i></a></li>' +
+        //    '<li data-placement="right" data-toggle="tooltip" title="New Update"><a href="#" id="plus-create-update"><i class="fa fa-share shadow"></i></a></li>' +
+        //    '<li data-toggle="tooltip" title="New Private Tag" data-placement="right"><a href="#" id="plus-private-tag"><i class="fa fa-lock shadow"></i></a></li>' +
+        //    '<li data-toggle="tooltip" title="New Public Tag" data-placement="right"><a href="#" id="plus-public-tag"><span class="fa shadow" style="font-weight:400">#</span></a></li></ul>';
+        //        return frame + image + "</div>";
+
+        //    }
+        // });
+    </script>
 </body>
 </html>
