@@ -60,6 +60,9 @@
     <Content Include="css\slidingTabs.css" />
     <Content Include="css\slidingTabs.min.css" />
     <Content Include="Description.html" />
+    <Content Include="img\collaborate.gif" />
+    <Content Include="img\Communicate.gif" />
+    <Content Include="img\comtify.gif" />
     <Content Include="json_data.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
