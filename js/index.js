@@ -4,7 +4,7 @@ $(document).on('click', '.fa-plus-circle', function () {
 });
 
 function Description(ThreadId) {
-    window.location.href = 'Description.html';
+    //window.location.href = 'Description.html';
 }
 
 $(document).on('click', '.fa-search', function () {

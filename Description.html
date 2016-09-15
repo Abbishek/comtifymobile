@@ -3,11 +3,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <title></title>
+    <title>C O M T I F Y</title>
 
-    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <!--<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">-->
     <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <!--<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>-->
 
     <!--<script src="js/bootstrapscripts/jquery-1.9.1.min.js"></script>-->
     <script src="js/bootstrapscripts/bootstrap.min.js"></script>
@@ -34,7 +34,7 @@
 
 </head>
 <body ng-app="starter">
-    <div ng-controller="MainController">
+    <!--<div ng-controller="MainController">
         <ion-header-bar class="bar-positive">
             <h1 class="title">Ionic ion-slides (Swiper)  - page {{data.currentPage}}</h1>
         </ion-header-bar>
@@ -44,9 +44,9 @@
                 <div class="box {{bgColor}}"></div>
             </ion-slide-page>
         </ion-slides>
-    </div>
-        <div id="divIndex" data-role="page">
-            <a href="#divDescription" data-transition="slide">Slide to Page Two</a>
+    </div>-->
+        <div id="divIndex">
+            <!--<a href="#divDescription" data-transition="slide">Slide to Page Two</a>-->
             <div class="container-fluid header">
                 <div class="col-xs-2 fa fa-plus-circle fa-2x">
                 </div>
@@ -100,7 +100,7 @@
                         <img src="img/users/19.jpg" />
                     </div>-->
                 </div>
-                <ul id="plus-drop" class="adddropdown" data-dropdown-content="Click to Add" style="position:absolute;top:-10px;left:20px;">
+                <ul id="plus-drop" class="adddropdown" data-dropdown-content="Click to Add" style="position:absolute;top:5%;left:8%;">
                     <li data-toggle="tooltip" title="Thread" data-placement="right"><a href="#" id="plus-create-thread"><i class="fa fa-envelope"></i></a></li>
                     <li data-placement="right" data-toggle="tooltip" title="Task"><a href="#" id="plus-create-task"><i class="fa fa-tasks shadow"></i></a></li>
                     <li data-placement="right" data-toggle="tooltip" title="Update"><a href="#" id="plus-create-update"><i class="fa fa-share shadow"></i></a></li>
@@ -109,8 +109,8 @@
                 </ul>
             </div>
         </div>
-        <div id="divDescription" data-role="page">
-            <a href="#divIndex" data-transition="slide" data-direction="reverse">Slide to Page One (reversed)</a>
+        <div id="divDescription" style="display:none;">
+            <!--<a href="#divIndex" data-transition="slide" data-direction="reverse">Slide to Page One (reversed)</a>-->
             <div class="container-fluid header">
                 <div class="col-xs-2 fa fa-times shadow fa-2x" id="moveToIndex">
                 </div>

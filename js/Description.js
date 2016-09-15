@@ -1,4 +1,5 @@
 ﻿$(document).on('click', '#moveToIndex', function () {
+    $('#divDescription').hide('slow');
     window.location.href = 'index.html';
 });
 
@@ -15,4 +16,10 @@ $(document).on('click', '#btnSubmit', function () {
 
 $(document).on('click', '.fa-list-ul', function () {
     $('#list-drop').show();
+});
+
+
+$(document).on('click', '.thread div', function () {
+    $('#divIndex').hide('slow');
+    $('#divDescription').show('slow');
 });
