@@ -57,6 +57,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\slidingTabs.css" />
+    <Content Include="css\slidingTabs.min.css" />
     <Content Include="Description.html" />
     <Content Include="json_data.json" />
     <None Include="Web.Debug.config">
@@ -81,6 +83,7 @@
     <Content Include="js\common.js" />
     <Content Include="js\Description.js" />
     <Content Include="js\index.js" />
+    <Content Include="js\slidingTabsDirective.js" />
     <Content Include="lib\font-awesome-4.1.0\css\font-awesome.css" />
     <Content Include="lib\font-awesome-4.1.0\css\font-awesome.min.css" />
     <Content Include="lib\font-awesome-4.1.0\fonts\fontawesome-webfont.svg" />
@@ -161,6 +164,7 @@
     <Content Include="js\bootstrapscripts\bootstrap.min.js" />
     <Content Include="js\bootstrapscripts\jquery-1.9.1.js" />
     <Content Include="js\bootstrapscripts\jquery-1.9.1.min.js" />
+    <Content Include="Slide.html" />
     <Content Include="Web.config" />
     <Content Include="js\bootstrapscripts\jquery-1.9.1.min.map" />
     <Content Include="lib\font-awesome-4.1.0\fonts\fontawesome-webfont.eot" />

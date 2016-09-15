@@ -3,14 +3,14 @@ body {
     font-family : 'Open Sans',sans-serif;
 }
 
-header, footer {
+.header, .footer {
     background-color:#579cBF;
     color:#ddd;
     padding:4px !important;
     text-align:center;
 }
 
-footer {
+.footer {
     position: absolute;
     right: 0;
     left: 0;

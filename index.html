@@ -11,6 +11,8 @@
     <link href="css/bootstrapcontent/bootstrap.css" rel="stylesheet" />
     <!--<script src="js/bootstrapscripts/jquery-ui.js"></script>-->
     <!--<script src="js/bootstrapscripts/jquery-1.9.1.intellisense.js"></script>-->
+    <!--<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>-->
+    <link href="css/slidingTabs.css" rel="stylesheet" />
 
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
@@ -23,134 +25,43 @@
     <script src="cordova.js"></script>
     <!-- your app's js -->
     <script src="js/app.js"></script>
-    <script src="js/index.js"></script>
     <script src="js/common.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/slidingTabsDirective.js"></script>
+
 </head>
 <body ng-app="starter">
-    <div>
-        <header class="container-fluid">
-            <div class="col-xs-2 fa fa-plus-circle fa-2x">
-                
-            </div>
-            <div class="col-xs-6" style="display:inline-block;">
-                <select class="selectpicker" id="selectpicker" data-style="btn-info">
-                    <option value="1">#inbox</option>
-                    <option value="2">#to</option>
-                    <option value="3">#cc</option>
-                    <option value="4">attachments</option>
-                </select>
-                <input id="searchbox" placeholder="search" class="search" />
-            </div>
-            <div class="col-xs-2 fa fa-search fa-2x">
-            </div>
-            <div class="col-xs-2 users">
-                <img src="img/users/19.jpg" />
-            </div>
-        </header>
-        <div class="container thread" onclick="Description(this);">
-            <div class="col-xs-2 users">
-                <img src="img/users/19.jpg" />
-            </div>
-            <div class="col-xs-8">
-                <div class="subject">New Color theme</div>
-                <div class="tagsdiv">
-                    <div class="tags"><span>#to</span><span class="tagclose">x</span></div>
-                    <div class="tags"><span>#inbox</span><span class="tagclose">x</span></div>
-                </div>
-            </div>
-            <div class="col-xs-2 users">
-                <img src="img/users/19.jpg" />
-            </div>
-        </div>
-        <div class="container thread" onclick="Description(this);">
-            <div class="col-xs-2 users">
-                <img src="img/users/19.jpg" />
-            </div>
-            <div class="col-xs-8">
-                <div class="subject">Another Ahmedabad based company</div>
-                <div class="tagsdiv">
-                    <div class="tags"><span>#to</span><span class="tagclose">x</span></div>
-                    <div class="tags"><span>#inbox</span><span class="tagclose">x</span></div>
-                </div>
-            </div>
-            <div class="col-xs-2 users">
-                <img src="img/users/19.jpg" />
-            </div>
-        </div>
-        <ul id="plus-drop" class="adddropdown" data-dropdown-content="Click to Add" style="position:absolute;top:5%;left:8%">
-            <li data-toggle="tooltip" title="Thread" data-placement="right"><a href="#" id="plus-create-thread"><i class="fa fa-envelope"></i></a></li>
-            <li data-placement="right" data-toggle="tooltip" title="Task"><a href="#" id="plus-create-task"><i class="fa fa-tasks shadow"></i></a></li>
-            <li data-placement="right" data-toggle="tooltip" title="Update"><a href="#" id="plus-create-update"><i class="fa fa-share shadow"></i></a></li>
-            <li data-toggle="tooltip" title="Private Tag" data-placement="right"><a href="#" id="plus-private-tag"><i class="fa fa-lock shadow"></i></a></li>
-            <li data-toggle="tooltip" title="Public Tag" data-placement="right"><a href="#" id="plus-public-tag"><span class="fa shadow" style="font-weight:400">#</span></a></li>
-        </ul>
-        <!--<footer class="container-fluid">
-            <div class="col-xs-10">
-            </div>
-            
-        </footer>-->
-    </div>
-   
-    <script>
-        $(function () {
-            //$('.fa-plus-circle').prepend('<ul id="plus-drop" class="adddropdown" data-dropdown-content="Click to Add" style="height:auto;width:auto;">' +
-            //        '<li data-toggle="tooltip" title="New Thread" data-placement="right"><a href="#" id="plus-create-thread"><i class="fa fa-envelope"></i></a></li>'+
-            //        '<li data-placement="right" data-toggle="tooltip" title="New Task"><a href="#" id="plus-create-task"><i class="fa fa-tasks shadow"></i></a></li>'+
-            //        '<li data-placement="right" data-toggle="tooltip" title="New Update"><a href="#" id="plus-create-update"><i class="fa fa-share shadow"></i></a></li>'+
-            //        '<li data-toggle="tooltip" title="New Private Tag" data-placement="right"><a href="#" id="plus-private-tag"><i class="fa fa-lock shadow"></i></a></li>'+
-            //        '<li data-toggle="tooltip" title="New Public Tag" data-placement="right"><a href="#" id="plus-public-tag"><span class="fa shadow">#</span></a></li>'+
-            //        '</ul>');
+    <ion-nav-bar class="tabsHeader">
+        <ion-nav-back-button>
+        </ion-nav-back-button>
+    </ion-nav-bar>
 
-            //$.ajax({
-            //    type: 'get',
-            //    url: '/json_data.json',
-            //    dataType: "json",
-            //    data: person,
-            //    success: function (data) {
-            //        $.each(data.person, function () {
-            //            var img = $('<img>'); //Equivalent: $(document.createElement('img'))
-            //            img.attr('src', this['img']);
-            //            img.appendTo('.users');
-            //            $(".subject").text(this['theme']);
-            //            var span = $('<span></span>');
-            //            span.text(this['tag']);
-            //            span.appendTo('.tags');
-            //        });
-            //    },
-            //    error: function () { alert("data not found"); }
-
-            //});
-
-            //var person = {
-            //    "person": [
-            //       { "img": "img/users/19.jpg", "theme": "New Color theme", "tag": "#to" }
-            //    ]
-            //};
-        });
-            
-
-        //$(document).tooltip({
-        //    items: ".fa-plus-circle",
-        //   // tooltipClass: "arrow",
-        //    position: {
-        //        my: "bottom",
-        //        at: "bottom"
-        //    },
-        //    content: function () {
-        //        var $this = $(this),
-        //            random, html = "";
-
-        //        var frame = "<div class=''>";
-        //        var image = '<ul id="plus-drop" class="adddropdown" data-dropdown-content="Click to Add" style="height:auto;width:auto;">' +
-        //    '<li data-toggle="tooltip" title="New Thread" data-placement="right"><a href="#" id="plus-create-thread"><i class="fa fa-envelope"></i></a></li>' +
-        //    '<li data-placement="right" data-toggle="tooltip" title="New Task"><a href="#" id="plus-create-task"><i class="fa fa-tasks shadow"></i></a></li>' +
-        //    '<li data-placement="right" data-toggle="tooltip" title="New Update"><a href="#" id="plus-create-update"><i class="fa fa-share shadow"></i></a></li>' +
-        //    '<li data-toggle="tooltip" title="New Private Tag" data-placement="right"><a href="#" id="plus-private-tag"><i class="fa fa-lock shadow"></i></a></li>' +
-        //    '<li data-toggle="tooltip" title="New Public Tag" data-placement="right"><a href="#" id="plus-public-tag"><span class="fa shadow" style="font-weight:400">#</span></a></li></ul>';
-        //        return frame + image + "</div>";
-
-        //    }
-        // });
+    <ion-nav-view ng-controller="MainController"></ion-nav-view>
+    <script id="index.html" type="text/ng-template">
+        <ion-view view-title="C O M T I F Y" class="">
+            <ion-content scroll="false">
+                <ion-slide-box slide-tabs-scrollable="true" show-pager="false" ion-slide-tabs>
+                    <ion-slide ion-slide-tab-label="COMMUNICATE"><h1>Tab 1</h1>
+                        <div style="text-align:center;">
+                            <a href="Description.html" id="post-update" class="button btnbackgrnd">Go To App</a>
+                        </div>
+                    </ion-slide>
+                    <ion-slide ion-slide-tab-label="COLLABORATE"><h1>Tab 2</h1>
+                        <div style="text-align:center;">
+                            <a href="Description.html" id="post-update" class="button btnbackgrnd">Go To App</a>
+                        </div>
+                    </ion-slide>
+                    <ion-slide ion-slide-tab-label="COMTIFY"><h1>Tab 3</h1>
+                        <div style="text-align:center;">
+                            <a href="Description.html" id="post-update" class="button btnbackgrnd">Go To App</a>
+                        </div>
+                    </ion-slide>
+                    <!--<ion-slide ion-slide-tab-label="another tab again"><h1>Tab 4</h1></ion-slide>
+                <ion-slide ion-slide-tab-label="a very large tab"><h1>Tab 5</h1></ion-slide>
+                <ion-slide ion-slide-tab-label="tab6"><h1>Tab 6</h1></ion-slide>-->
+                </ion-slide-box>
+            </ion-content>
+        </ion-view>
     </script>
 </body>
 </html>

@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+
+    <div data-role="page" id="pageone">
+
+        <a href="#pagetwo" data-transition="slide">Slide to Page Two</a>
+
+    </div>
+
+    <div data-role="page" id="pagetwo">
+        <a href="#pageone" data-transition="slide" data-direction="reverse">Slide to Page One (reversed)</a>
+    </div>
+    <div id="divIndex">
+        <ion-pane>
+            <ion-header-bar class="container-fluid header">
+                <div class="col-xs-2 fa fa-plus-circle fa-2x">
+                </div>
+                <div class="col-xs-6" style="display:inline-block;">
+                    <select class="selectpicker" id="selectpicker" data-style="btn-info">
+                        <option value="1">#inbox</option>
+                        <option value="2">#to</option>
+                        <option value="3">#cc</option>
+                        <option value="4">attachments</option>
+                    </select>
+
+                    <input id="searchbox" placeholder="search" class="search" />
+
+                </div>
+                <div class="col-xs-2 fa fa-search fa-2x">
+                </div>
+                <div class="col-xs-2 users">
+                    <img src="img/users/19.jpg" />
+                </div>
+            </ion-header-bar>
+            <ion-content class="padding">
+                <div class="container thread" onclick="Description(this);">
+                    <!-- Started By -->
+                    <div class="col-xs-2 users">
+                        <img src="img/users/19.jpg" />
+                    </div>
+                    <div class="col-xs-8">
+                        <div class="subject">New Color theme</div>
+                        <!--<div class="tagsdiv">
+                            <div class="tags"><span>#to</span><span class="tagclose">x</span></div>
+                            <div class="tags"><span>#inbox</span><span class="tagclose">x</span></div>
+                        </div>-->
+                    </div>
+                    <!--<div class="col-xs-2 users">
+                        <img src="img/users/19.jpg" />
+                    </div>-->
+                </div>
+                <div class="container thread" onclick="Description(this);">
+                    <!-- Started By -->
+                    <div class="col-xs-2 users">
+                        <img src="img/users/19.jpg" />
+                    </div>
+                    <div class="col-xs-8">
+                        <div class="subject">Another Ahmedabad based company</div>
+                        <!--<div class="tagsdiv">
+                            <div class="tags"><span>#to</span><span class="tagclose">x</span></div>
+                            <div class="tags"><span>#inbox</span><span class="tagclose">x</span></div>
+                        </div>-->
+                    </div>
+                    <!--<div class="col-xs-2 users">
+                        <img src="img/users/19.jpg" />
+                    </div>-->
+                </div>
+                <ul id="plus-drop" class="adddropdown" data-dropdown-content="Click to Add" style="position:absolute;top:-10px;left:20px;">
+                    <li data-toggle="tooltip" title="Thread" data-placement="right"><a href="#" id="plus-create-thread"><i class="fa fa-envelope"></i></a></li>
+                    <li data-placement="right" data-toggle="tooltip" title="Task"><a href="#" id="plus-create-task"><i class="fa fa-tasks shadow"></i></a></li>
+                    <li data-placement="right" data-toggle="tooltip" title="Update"><a href="#" id="plus-create-update"><i class="fa fa-share shadow"></i></a></li>
+                    <li data-toggle="tooltip" title="Private Tag" data-placement="right"><a href="#" id="plus-private-tag"><i class="fa fa-lock shadow"></i></a></li>
+                    <li data-toggle="tooltip" title="Public Tag" data-placement="right"><a href="#" id="plus-public-tag"><span class="fa shadow" style="font-weight:400">#</span></a></li>
+                </ul>
+            </ion-content>
+        </ion-pane>
+    </div>
+</body>
+</html>
